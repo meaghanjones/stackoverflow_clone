@@ -1,0 +1,6 @@
+<h4>Questions</h4>
+<% @questions.each do |question| %>
+  <li><%= question.text %></li>
+<% end %>
+
+<%= link_to "Create Account", new_user_path %>
