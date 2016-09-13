@@ -10,9 +10,5 @@ describe "the create a user process" do
     click_on 'Sign Up'
     expect(page).to have_content 'Welcome'
   end
-end
 
-  #   user = FactoryGirl.create(:user)
-  #   visit "/"
-  #   expect(page).to have_content("Welcome")
-  # end
+end
