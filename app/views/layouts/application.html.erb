@@ -12,6 +12,11 @@
     <div class="container">
       <%= flash[:notice] %>
       <%= flash[:alert] %>
+      <% if current_user != nil %>
+         <%= link_to "Log Out", log_out_path %>
+      <% else %>
+        <%= link_to "Sign in", log_in_path %>
+      <% end %>
       <%= yield %>
     </div>
   </body>

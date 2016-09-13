@@ -3,6 +3,9 @@ class User < ActiveRecord::Base
   has_many :questions
   has_many :answers
 
+  validates :name, :presence => true
+  validates :email, :presence => true
+  validates :password, :presence => true
   validates_uniqueness_of :email
   validates_confirmation_of :password
   before_save :encrypt_password
