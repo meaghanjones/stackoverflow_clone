@@ -1,5 +1,9 @@
 class SessionsController < ApplicationController
+  def new
+  end
+
   def create
+    binding.pry
     @user = User.authenticate(params[:email], params[:password])
     if @user
       flash[:notice] = "You've been logged in"
@@ -13,9 +17,9 @@ class SessionsController < ApplicationController
 
 
   def destroy
-    @session = Session.find(session_params)
-    @session.destroy
-    redirect_to :root
+    session[:user_id] = nil
+    flash[:notice] = "You've been logged out successfully!"
+    redirect_to "/"
   end
 
 end
